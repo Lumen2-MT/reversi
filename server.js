@@ -21,7 +21,7 @@ var directory = __dirname + '/public';
  /* Construst an http server that gets files from the file server*/
  var app = http.createServer(
    function(request,response){
-     request.addListner('end' ,
+     request.addListener('end' ,
         function (){
             file.serve(request,response);
         }
