@@ -142,7 +142,7 @@ io.sockets.on('connection', function(socket){
                                 room: room,
                                 username: username,
                                 socket_id: socket.id,
-                                membership: (numClients)
+                                membership: numClients
                               };
           io.in(room).emit('join_room_response',success_data);
 
@@ -161,7 +161,7 @@ io.sockets.on('connection', function(socket){
     });
 
 
-      socket.on('disconnect',function(socket){
+      socket.on('disconnect',function(){
         log ('Client disconnected '+JSON.stringify(players[socket.id]));
 
         if('undefined' !== typeof players[socket.id] && players[socket.id]){
